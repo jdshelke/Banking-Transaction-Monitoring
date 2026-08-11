@@ -1,0 +1,11 @@
+mysql:
+  host: localhost
+  port: 3306
+  database: banking
+  username: root
+  password: jdshelke
+  driver: com.mysql.cj.jdbc.Driver
+
+hdfs:
+  namenode: hdfs://quickstart.cloudera:8020
+  base_path: /user/cloudera/banking
