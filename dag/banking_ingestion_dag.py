@@ -1,5 +1,5 @@
 from airflow import DAG
-from airflow.providers.standard.operators.bash import BaseOperator
+from airflow.providers.standard.operators.bash import BashOperator
 
 from datetime import datetime
 
@@ -29,7 +29,7 @@ with DAG(
 
     for table in SOURCE_TABLES:
 
-        BaseOperator(
+        BashOperator(
             task_id=f"ingest_{table}",
             bash_command=(
                 f"spark-submit "
