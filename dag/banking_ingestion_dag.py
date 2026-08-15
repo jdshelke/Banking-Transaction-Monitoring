@@ -3,7 +3,7 @@ from airflow.providers.standard.operators.bash import BashOperator
 
 from datetime import datetime
 
-PROJECT_HOME = "/home/jdshelke/projects/banking-transaction-monitoring"
+PROJECT_HOME = "/home/jdshelke/projects/Banking-Transaction-Monitoring"
 INGESTION_JOB = f"{PROJECT_HOME}/src/jobs/ingestion_job.py"
 
 SOURCE_TABLES = [
