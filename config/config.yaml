@@ -7,5 +7,5 @@ mysql:
   driver: com.mysql.cj.jdbc.Driver
 
 hdfs:
-  namenode: hdfs://localhost:8020
+  namenode: hdfs://localhost:9000
   base_path: /home/jdshelke/projects/Banking-Transaction-Monitoring/data
