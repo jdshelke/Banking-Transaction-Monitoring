@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession
 
+import argparse
 from src.utils import config_reader
 from src.readers.mysql_reader import MySQLReader
 from src.writers.bronze_writer import BronzeWriter
@@ -45,20 +46,12 @@ if __name__ == "__main__":
         hdfs_config
     )
 
-    tables = [
-        "loans",
-        "support_tickets",
-        "transactions",
-        "customers",
-        "employees",
-        "loan_payments",
-        "cards",
-        "card_transactions",
-        "accounts",
-        "branches"
-    ]
+    parser = argparse.ArgumentParser()
 
-    for table in tables:
-        bronze_ingestion.ingestion(table)
+    parser.add_argument("--table", required=True, help="Source table to ingest")
+
+    args = parser.parse_args()
+
+    bronze_ingestion.ingestion(args.table)
 
     spark.stop()
