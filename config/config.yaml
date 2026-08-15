@@ -1,11 +1,11 @@
 mysql:
-  host: localhost
+  host: 192.168.0.100
   port: 3306
   database: banking
-  username: root
+  username: banking_user
   password: jdshelke
   driver: com.mysql.cj.jdbc.Driver
 
 hdfs:
-  namenode: hdfs://quickstart.cloudera:8020
-  base_path: /user/cloudera/banking
+  namenode: hdfs://localhost:8020
+  base_path: /home/jdshelke/projects/Banking-Transaction-Monitoring/data
