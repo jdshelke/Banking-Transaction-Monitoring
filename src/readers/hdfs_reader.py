@@ -3,8 +3,8 @@ class HDFSReader:
         self.spark = spark
         self.base_path = base_path
 
-    def read_table(self, table_name):
-        path = f"{self.base_path}/{table_name}"
+    def read_table(self, table_name, layer):
+        path = f"{self.base_path}/{layer}/{table_name}"
 
         df = self.spark.read.format("parquet") \
             .load(path)

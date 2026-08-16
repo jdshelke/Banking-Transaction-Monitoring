@@ -24,7 +24,7 @@ class BronzeIngestion:
     def ingestion(self, table_name):
         df = self.mysql_reader.read_table(table_name)
 
-        self.bronze_writer.write_parquet(df, table_name)
+        self.bronze_writer.write_parquet(df, table_name, "bronze")
 
 if __name__ == "__main__":
 

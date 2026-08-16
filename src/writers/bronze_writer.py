@@ -3,13 +3,8 @@ class BronzeWriter:
         self.namenode = namenode
         self.base_path = base_path
 
-    def write_parquet(self, df, table_name):
+    def write_parquet(self, df, table_name, layer):
         df.write \
             .format("parquet") \
             .mode("append") \
-            .save(f"{self.namenode}{self.base_path}/bronze/{table_name}")
-
-        # df.write \
-        #     .format("parquet") \
-        #     .mode("append") \
-        #     .save(f"file:///F:/Projects/Banking-Transaction-Monitoring/src/data/bronze/{table_name}")
+            .save(f"{self.namenode}{self.base_path}/{layer}/{table_name}")

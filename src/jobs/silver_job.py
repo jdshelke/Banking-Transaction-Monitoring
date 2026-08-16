@@ -28,7 +28,7 @@ class SilverJob:
         self.silver_writer = SilverWriter(self.spark)
 
     def process_table(self, table_name, transform_function):
-        bronze_df = self.hdfs_reader.read_table(table_name)
+        bronze_df = self.hdfs_reader.read_table(table_name, "bronze")
 
         silver_df, primary_key = transform_function(bronze_df)
 
