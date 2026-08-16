@@ -9,7 +9,7 @@ def transform(df):
 
     to_upper_case_df = data_quality.change_case(trim_string_df, ["role"], "upper")
 
-    salary_valid_df = data_quality.validate_non_negative(to_upper_case_df, "salary")
+    salary_valid_df = data_quality.validate_non_negative(to_upper_case_df, ["salary"])
 
     date_valid_df = data_quality.validate_date(salary_valid_df, "hire_date")
 

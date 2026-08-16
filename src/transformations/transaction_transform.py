@@ -11,7 +11,7 @@ def transform(df):
 
     to_timestamp_df = data_quality.to_timestamp(to_upper_case_df, ["txn_date"])
 
-    amount_valid_df = data_quality.validate_non_negative(to_timestamp_df, "amount")
+    amount_valid_df = data_quality.validate_non_negative(to_timestamp_df, ["amount"])
 
     cleaned_transaction_df = data_quality.fill_null_value(amount_valid_df, "Unknown", ["merchant_category"])
 

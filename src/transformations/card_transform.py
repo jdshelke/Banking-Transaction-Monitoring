@@ -10,7 +10,7 @@ def transform(df):
 
     to_upper_case_df = data_quality.change_case(trim_string_df, ["card_type", "status"], "upper")
 
-    credit_limit_valid_df = data_quality.validate_non_negative(to_upper_case_df, "credit_limit")
+    credit_limit_valid_df = data_quality.validate_non_negative(to_upper_case_df, ["credit_limit"])
 
     date_valid_df = data_quality.validate_date(credit_limit_valid_df, "issue_date")
 

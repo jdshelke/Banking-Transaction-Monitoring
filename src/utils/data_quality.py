@@ -19,11 +19,11 @@ def fill_null_value(df, value, columns):
 def change_case(df, columns, case_type):
     if case_type.lower() == "lower":
         for column in columns:
-            df = df.withColumn(column, lower(column))
+            df = df.withColumn(column, lower(col(column)))
         return df
     if case_type.lower() == "upper":
         for column in columns:
-            df = df.withColumn(column, upper(column))
+            df = df.withColumn(column, upper(col(column)))
         return df
 
 def to_timestamp(df, columns):

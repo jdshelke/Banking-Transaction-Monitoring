@@ -9,7 +9,7 @@ def transform(df):
 
     to_upper_case_df = data_quality.change_case(trim_string_df, ["merchant_category"], "upper")
 
-    amount_valid_df = data_quality.validate_non_negative(to_upper_case_df, "amount")
+    amount_valid_df = data_quality.validate_non_negative(to_upper_case_df, ["amount"])
 
     date_valid_df = data_quality.validate_date(amount_valid_df, "txn_date")
 
