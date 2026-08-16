@@ -17,4 +17,4 @@ def transform(df):
 
     # print("For Employee Total Records Processed: ", cleaned_employees_df.count())
 
-    return cleaned_employees_df, "employee_id"
+    return cleaned_employees_df

@@ -19,4 +19,4 @@ def transform(df):
     
     # print("For Cart Transaction Total Records Processed: ", cleaned_card_transaction_df.count())
 
-    return cleaned_card_transaction_df, "card_txn_id"
+    return cleaned_card_transaction_df

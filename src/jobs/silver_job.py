@@ -30,9 +30,9 @@ class SilverJob:
     def process_table(self, table_name, transform_function):
         bronze_df = self.hdfs_reader.read_table(table_name, "bronze")
 
-        silver_df, primary_key = transform_function(bronze_df)
+        silver_df = transform_function(bronze_df)
 
-        self.silver_writer.write_hive_table(silver_df, table_name, primary_key)
+        self.silver_writer.write_hive_table(silver_df, table_name)
 
 
 if __name__ == "__main__":

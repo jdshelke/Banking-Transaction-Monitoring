@@ -15,4 +15,4 @@ def transform(df):
 
     # print("For Account Total Records Processed: ", cleaned_accounts_df.count())
 
-    return cleaned_accounts_df, "account_id"
+    return cleaned_accounts_df

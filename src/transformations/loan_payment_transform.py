@@ -13,4 +13,4 @@ def transform(df):
 
     # print("For Loan Payment Total Records Processed: ", cleaned_loan_payment_df.count())
 
-    return cleaned_loan_payment_df, "payment_id"
+    return cleaned_loan_payment_df

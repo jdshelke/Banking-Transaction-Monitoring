@@ -16,4 +16,4 @@ def transform(df):
 
     # print("For Branch Total Records Processed: ", cleaned_branch_df.count())
 
-    return cleaned_branch_df, "branch_id"
+    return cleaned_branch_df

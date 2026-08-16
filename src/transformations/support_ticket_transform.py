@@ -25,4 +25,4 @@ def transform(df):
 
     # print("For Support Ticket Total Records Processed: ", cleaned_support_ticket_df.count())
 
-    return cleaned_support_ticket_df, "ticket_id"
+    return cleaned_support_ticket_df

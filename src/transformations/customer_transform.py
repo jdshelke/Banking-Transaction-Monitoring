@@ -23,4 +23,4 @@ def transform(df):
     
     # print("For Customers Total Records Processed: ", cleaned_customer_df.count())
 
-    return cleaned_customer_df, "customer_id"
+    return cleaned_customer_df
