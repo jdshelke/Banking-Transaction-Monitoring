@@ -34,7 +34,6 @@ if __name__ == "__main__":
 
     spark = SparkSession.builder \
         .appName("BankingTransactionMonitoring-BronzeIngestion") \
-        .master("local[*]") \
         .getOrCreate()
 
     mysql_config = config["mysql"]

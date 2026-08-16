@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession
 
+import argparse
 from src.utils import config_reader
 from src.readers.hdfs_reader import HDFSReader
 from src.writers.silver_writer import SilverWriter
@@ -42,7 +43,6 @@ if __name__ == "__main__":
 
     spark = SparkSession.builder \
         .appName("BankingTransactionMonitoring-SilverJob") \
-        .master("local[*]") \
         .getOrCreate()
 
     hdfs_config = config["hdfs"]
@@ -62,7 +62,14 @@ if __name__ == "__main__":
         "support_tickets": support_ticket_transform.transform
     }
 
-    for table_name, transform_function in transformations.items():
-        silver_job.process_table(table_name, transform_function)
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--table", required=True, help="Parquet files to Hive tables")
+
+    args = parser.parse_args()
+
+    transform_function = transformations[args.table]
+
+    silver_job.process_table(args.table, transform_function)
 
     spark.stop()
