@@ -32,6 +32,7 @@ with DAG(
         BashOperator(
             task_id=f"ingest_{table}",
             cwd=PROJECT_HOME,
+            pool="spark_pool",
             bash_command=(
                 f"spark-submit "
                 f"--master yarn "
